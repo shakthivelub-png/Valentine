@@ -1,40 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Valentine 💖</title>
+  <title>For Andrea 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       text-align: center;
-      font-family: Arial, sans-serif;
-      background-color: #ffe6eb;
-      margin-top: 100px;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(#ffe6eb, #fff);
+      padding: 20px;
     }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      position: relative;
+      min-height: 100vh;
+    }
+
     button {
       font-size: 18px;
-      padding: 10px 20px;
-      margin: 20px;
+      padding: 14px 26px;
+      margin: 15px;
       cursor: pointer;
+      border-radius: 12px;
+      border: none;
     }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
     #no {
+      background-color: #ffb6c1;
       position: absolute;
+    }
+
+    #buttons {
+      position: relative;
+      height: 120px;
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 40px;
+      animation: fadeIn 1.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    img {
+      width: 90%;
+      max-width: 260px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    iframe {
+      margin-top: 25px;
+      width: 100%;
+      max-width: 320px;
+      height: 180px;
+      border-radius: 14px;
     }
   </style>
 </head>
 <body>
 
-<h1>Hey ❤️</h1>
-<h2>Will you be my Valentine? 💘</h2>
+<div class="container">
 
-<button onclick="yesClicked()">Yes 😍</button>
-<button id="no" onmouseover="moveNo()">No 🙈</button>
+<h1>Hey Andrea 💕</h1>
+
+<h2>I was not looking for you when I met you,</h2>
+<h2>but now with you it feels like a part of me</h2>
+<h2>always wanted to have you.</h2>
+
+<h2 style="margin-top:30px;">Will you be my Valentine? 💘</h2>
+
+<div id="buttons">
+  <button id="yes" onclick="yesClicked()">Yes 😍</button>
+  <button id="no" onmouseover="moveNo()" ontouchstart="moveNo()">No 🙈</button>
+</div>
+
+<div id="surprise">
+  <h1>YAY 💖✨</h1>
+  <h2>You just made me really happy.</h2>
+  <h3>This song reminds me of you 🎶</h3>
+
+  <!-- Replace PHOTO_LINK -->
+  <img src="PHOTO_LINK" alt="Us">
+
+  <iframe
+    src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <h2 style="margin-top:30px;">See you on Valentine’s Day 💌</h2>
+</div>
+
+</div>
 
 <script>
   function yesClicked() {
-    alert("Yayyy!! 💕 Happy Valentine’s!");
+    document.getElementById("surprise").style.display = "block";
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }
+
   function moveNo() {
-    document.getElementById("no").style.left = Math.random() * 300 + "px";
-    document.getElementById("no").style.top = Math.random() * 300 + "px";
+    const noBtn = document.getElementById("no");
+    const container = document.querySelector(".container");
+    const maxX = container.offsetWidth - noBtn.offsetWidth;
+    const maxY = 100;
+
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
   }
 </script>
 
