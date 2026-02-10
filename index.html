@@ -2,25 +2,39 @@
 <html>
 <head>
   <title>For Andrea 💖</title>
+
+  <!-- Mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Elegant + sexy fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       text-align: center;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Playfair Display', serif;
       background: linear-gradient(#ffe6eb, #fff);
       padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      min-height: 100vh;
     }
 
     h1, h2, h3 {
       color: #333;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      position: relative;
-      min-height: 100vh;
+    /* Sexy romantic lines */
+    .love-line {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      font-weight: 600;
+      color: #b03060;
+      letter-spacing: 1px;
+      margin: 6px 0;
     }
 
     button {
@@ -30,6 +44,7 @@
       cursor: pointer;
       border-radius: 12px;
       border: none;
+      font-family: 'Playfair Display', serif;
     }
 
     #yes {
@@ -69,12 +84,16 @@
       width: 90%;
       max-width: 260px;
       border-radius: 20px;
-      margin-top: 20px;
+      margin-top: 25px;
       box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     iframe {
-      margin-top: 25px;
+      display: block;
+      margin: 25px auto 0 auto;
       width: 100%;
       max-width: 320px;
       height: 180px;
@@ -86,36 +105,37 @@
 
 <div class="container">
 
-<h1>Hey Andrea 💕</h1>
+  <h1>Hey Andrea 💕</h1>
 
-<h2>I was not looking for you when I met you,</h2>
-<h2>but now with you it feels like a part of me</h2>
-<h2>always wanted to have you.</h2>
+  <!-- Sexy romantic message -->
+  <p class="love-line">I was not looking for you when I met you,</p>
+  <p class="love-line">but now with you it feels like a part of me</p>
+  <p class="love-line">always wanted to have you.</p>
 
-<h2 style="margin-top:30px;">Will you be my Valentine? 💘</h2>
+  <h2 style="margin-top:30px;">Will you be my Valentine? 💘</h2>
 
-<div id="buttons">
-  <button id="yes" onclick="yesClicked()">Yes 😍</button>
-  <button id="no" onmouseover="moveNo()" ontouchstart="moveNo()">No 🙈</button>
-</div>
+  <div id="buttons">
+    <button id="yes" onclick="yesClicked()">Yes 😍</button>
+    <button id="no" onmouseover="moveNo()" ontouchstart="moveNo()">No 🙈</button>
+  </div>
 
-<div id="surprise">
-  <h1>YAY 💖✨</h1>
-  <h2>You just made me really happy.</h2>
-  <h3>This song reminds me of you 🎶</h3>
+  <div id="surprise">
+    <h1>YAY 💖✨</h1>
+    <h2>You just made me really happy.</h2>
+    <h3>This song reminds me of you 🎶</h3>
 
-  <!-- Replace PHOTO_LINK -->
-  <img src="https://raw.githubusercontent.com/shakthivelub-png/Valentine/main/WhatsApp%20Image%202026-02-10%20at%201.54.22%20PM.jpeg
-" alt="Us">
+    <!-- PHOTO -->
+    <img src="https://raw.githubusercontent.com/shakthivelub-png/Valentine/main/WhatsApp%20Image%202026-02-10%20at%201.54.22%20PM.jpeg" alt="Us">
 
-  <iframe
-    src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
+    <!-- SONG BELOW PHOTO -->
+    <iframe
+      src="https://www.youtube.com/embed/vGJTaP6anOU?autoplay=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
 
-  <h2 style="margin-top:30px;">See you on Valentine’s Day 💌</h2>
-</div>
+    <h2 style="margin-top:30px;">See you on Valentine’s Day 💌</h2>
+  </div>
 
 </div>
 
@@ -127,10 +147,8 @@
 
   function moveNo() {
     const noBtn = document.getElementById("no");
-    const container = document.querySelector(".container");
-    const maxX = container.offsetWidth - noBtn.offsetWidth;
-    const maxY = 100;
-
+    const maxX = 250;
+    const maxY = 80;
     noBtn.style.left = Math.random() * maxX + "px";
     noBtn.style.top = Math.random() * maxY + "px";
   }
